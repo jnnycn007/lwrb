@@ -24,7 +24,8 @@ my_buff_evt_fn(lwrb_t* buff, lwrb_evt_type_t type, lwrb_sz_t len) {
 }
 
 int
-main() {
+main(void) {
+    int retval = 0;
     lwrb_sz_t len;
 
     /* Init buffer */
@@ -41,7 +42,7 @@ main() {
                (unsigned)(_rw_len_), (unsigned)is_as_expected);                                                        \
         if (!is_as_expected) {                                                                                         \
             printf("Test failed on line %u", (unsigned)__LINE__);                                                      \
-            return -1;                                                                                                 \
+            retval = -1;                                                                                               \
         }                                                                                                              \
     } while (0)
 
@@ -74,7 +75,7 @@ main() {
                (unsigned)buff.r_ptr, (unsigned)(_success_), (unsigned)(_rw_len_), (unsigned)is_as_expected);           \
         if (!is_as_expected) {                                                                                         \
             printf("Test failed on line %u", (unsigned)__LINE__);                                                      \
-            return -1;                                                                                                 \
+            retval = -1;                                                                                               \
         }                                                                                                              \
     } while (0)
 
@@ -111,7 +112,7 @@ main() {
                (unsigned)is_as_expected);                                                                              \
         if (!is_as_expected) {                                                                                         \
             printf("Test failed on line %u", (unsigned)__LINE__);                                                      \
-            return -1;                                                                                                 \
+            retval = -1;                                                                                               \
         }                                                                                                              \
     } while (0)
 
@@ -158,7 +159,7 @@ main() {
                (unsigned)is_as_expected);                                                                              \
         if (!is_as_expected) {                                                                                         \
             printf("Test failed on line %u", (unsigned)__LINE__);                                                      \
-            return -1;                                                                                                 \
+            retval = -1;                                                                                               \
         }                                                                                                              \
     } while (0)
 
@@ -201,7 +202,7 @@ main() {
                (_bts_len_), (_start_offset_), (int)found_idx, (int)found, (int)is_as_expected);                        \
         if (!is_as_expected) {                                                                                         \
             printf("Test failed on line %u", (unsigned)__LINE__);                                                      \
-            return -1;                                                                                                 \
+            retval = -1;                                                                                               \
         }                                                                                                              \
     } while (0)
 
@@ -236,6 +237,6 @@ main() {
 #undef FIND_TEST
     }
 
-    printf("All completed!\r\n");
-    return 0;
+    printf("Done!\r\n");
+    return retval;
 }
