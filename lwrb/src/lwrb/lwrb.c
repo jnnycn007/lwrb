@@ -47,7 +47,7 @@
         }                                                                                                              \
     } while (0)
 
-/* Optional atomic opeartions */
+/* Optional atomic operations */
 #ifdef LWRB_DISABLE_ATOMIC
 #define LWRB_INIT(var, val)        (var) = (val)
 #define LWRB_LOAD(var, type)       (var)
