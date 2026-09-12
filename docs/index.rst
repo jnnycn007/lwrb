@@ -16,7 +16,7 @@ LwRB is a generic *FIFO* (First In; First Out) buffer library optimized for embe
 Features
 ^^^^^^^^
 
-* Written in C (C11), compatible with ``size_t`` for size data types
+* Written in C (C11), compatible with ``stdint.h`` for size data types
 * Platform independent, no architecture specific code
 * FIFO (First In First Out) buffer implementation
 * No dynamic memory allocation, data is static array
